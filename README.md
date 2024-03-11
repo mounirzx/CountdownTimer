@@ -11,10 +11,10 @@ This project is a simple web application that displays a countdown timer using t
 ## Demo 
 screenshots:
 
-![vCard Desktop Demo](./img/Screenshot.png "Desktop Demo")
+![vCard Desktop Demo](./img/screen.gif"Desktop Demo")
 
 
-![vCard Desktop Demo](./img/Screenshot2.png "Desktop Demo")
+
 ## Usage
 
 To use this project, follow these steps:
