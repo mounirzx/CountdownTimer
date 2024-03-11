@@ -10,7 +10,7 @@ This project is a simple web application that displays a countdown timer using t
 
 ## Demo 
 screenshots:
-
+![grab-landing-page](./img/screen.gif"Desktop Demo")
 ![vCard Desktop Demo](./img/screen.gif"Desktop Demo")
 
 
