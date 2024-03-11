@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Odometer Test</title>
+  <script src="jquery/js/jquery3.7.1.min.js"></script>
+  <!-- Include Odometer library -->
+  <script src="odometer/js/odometer0.4.7.min.js"></script>
+  <!-- Include Odometer CSS -->
+  <link rel="stylesheet" href="odometer/css/odometer-0.4.7-theme-default.css">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f0f0f0;
+      text-align: center;
+      padding-top: 50px;
+    }
+
+    .countdown {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-bottom: 20px;
+    }
+
+    .countdown-item {
+      margin: 0 10px;
+    }
+
+    .countdown-item .odometer {
+      font-size: 36px;
+    }
+
+    .countdown-label {
+      font-size: 20px;
+      color: #666;
+    }
+  </style>
+</head>
+<body>
+  <div class="countdown">
+    <div class="countdown-item">
+      <div class="odometer days"></div>
+      <div class="countdown-label">Days</div>
+    </div>
+    <div class="countdown-item">
+      <div class="odometer hours"></div>
+      <div class="countdown-label">Hours</div>
+    </div>
+    <div class="countdown-item">
+      <div class="odometer minutes"></div>
+      <div class="countdown-label">Minutes</div>
+    </div>
+    <div class="countdown-item">
+      <div class="odometer seconds"></div>
+      <div class="countdown-label">Seconds</div>
+    </div>
+  </div>
+
+  <script>
+    $(document).ready(function() {
+      function updateOdometer(serverTime) {
+        var targetDate = new Date("2024-04-11").getTime(); // Set your target date here
+
+        var timeRemaining = targetDate - serverTime;
+
+        var days = Math.floor(timeRemaining / (1000 * 60 * 60 * 24));
+        var hours = Math.floor((timeRemaining % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        var minutes = Math.floor((timeRemaining % (1000 * 60 * 60)) / (1000 * 60));
+        var seconds = Math.floor((timeRemaining % (1000 * 60)) / 1000);
+
+        $(".days").html(days + " days");
+        $(".hours").html(hours + " hours");
+        $(".minutes").html(minutes + " minutes");
+        $(".seconds").html(seconds + " seconds");
+      }
+
+      $.ajax({
+     
+        url: 'Server/hour.php',
+        type: 'GET',
+        success: function(data) {
+          var serverTime = parseInt(data);
+          serverTime+= 3600000;
+          updateOdometer(serverTime); // Update odometer with initial server time
+          setInterval(function() {
+            serverTime += 86400000; // Increment server time by 1 day
+            updateOdometer(serverTime);
+          }, 86400000);
+          setInterval(function() {
+            serverTime += 3600000; // Increment server time by 1 hour
+            updateOdometer(serverTime);
+          }, 3600000);
+          setInterval(function() {
+            serverTime += 60000; // Increment server time by 1 minute
+            updateOdometer(serverTime);
+          }, 60000);
+          // Update odometer every second using client-side time
+          setInterval(function() {
+            serverTime += 1000; // Increment server time by 1 second
+            updateOdometer(serverTime);
+          }, 1000);
+        }
+      });
+    });
+  </script>
+</body>
+</html>
