@@ -18,10 +18,10 @@ This project is a simple web application that displays a countdown timer using t
 
 To use this project, follow these steps:
 
-1. Clone the repository to your local machine:
+1. Clone the repository to your local machine on your htdcos (C:\xampp\htdocs\):
 
  ```sh
-   git clone https://github.com/your-username/odometer-countdown.git ```
+   git clone https://github.com/your-username/odometer-countdown.git 
 ```
 
 
