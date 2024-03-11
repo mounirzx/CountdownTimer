@@ -8,9 +8,7 @@ This project is a simple web application that displays a countdown timer using t
 - Uses AJAX to fetch the server time from the `hour.php` script.
 - Updates the countdown timer every second.
 
-## Demo 
-screenshots:
-![Desktop Demo](./img/screen.gif "Alt Text")
+## Demo :
 
 ![vCard Desktop Demo](./img/screen.gif "Desktop Demo")
 
