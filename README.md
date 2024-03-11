@@ -12,6 +12,7 @@ This project is a simple web application that displays a countdown timer using t
 screenshots:
 ![Alt Text](./img/screen.gif"Desktop Demo")
 ![vCard Desktop Demo](./img/screen.gif"Desktop Demo")
+![GIF example](https://example.com/example.gif](https://github.com/mounirzx/CountdownTimer/blob/main/img/screen.gif)
 
 
 
