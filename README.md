@@ -8,21 +8,20 @@ This project is a simple web application that displays a countdown timer using t
 - Uses AJAX to fetch the server time from the `hour.php` script.
 - Updates the countdown timer every second.
 
-## Demo 
-screenshots:
+## Demo :
 
-![vCard Desktop Demo](./img/Screenshot.png "Desktop Demo")
+![vCard Desktop Demo](./img/screen.gif "Desktop Demo")
 
 
-![vCard Desktop Demo](./img/Screenshot2.png "Desktop Demo")
+
 ## Usage
 
 To use this project, follow these steps:
 
-1. Clone the repository to your local machine:
+1. Clone the repository to your local machine on your htdcos (C:\xampp\htdocs\):
 
  ```sh
-   git clone https://github.com/your-username/odometer-countdown.git ```
+   git clone https://github.com/your-username/odometer-countdown.git 
 ```
 
 
