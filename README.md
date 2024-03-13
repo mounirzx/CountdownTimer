@@ -21,7 +21,7 @@ To use this project, follow these steps:
 1. Clone the repository to your local machine on your htdcos (C:\xampp\htdocs\):
 
  ```sh
-   git clone https://github.com/your-username/odometer-countdown.git 
+   git clone https://github.com/mounirzx/CountdownTimer.git
 ```
 
 
