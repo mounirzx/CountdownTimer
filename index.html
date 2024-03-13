@@ -77,7 +77,8 @@
       }
 
       $.ajax({
-        url: 'Server/hour.php',
+        url: 'https://dgl.bneder.dz/hour.php',
+        //url: 'Server/hour.php',
         type: 'GET',
         success: function(data) {
           var serverTime = parseInt(data);
